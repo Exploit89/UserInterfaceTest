@@ -2127,6 +2127,7 @@ GameObject:
   - component: {fileID: 1088339314}
   - component: {fileID: 1088339313}
   - component: {fileID: 1088339312}
+  - component: {fileID: 1088339315}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -2191,13 +2192,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088339310}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.7169812, g: 0.4230216, b: 0.15895337, a: 0.43137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2222,6 +2223,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088339310}
   m_CullTransparentMesh: 1
+--- !u!114 &1088339315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088339310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d0412c83213034f891baa3df7e903e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 1088339313}
+  _from: {r: 0.7169812, g: 0.4230216, b: 0.15895337, a: 1}
+  _to: {r: 0.056737266, g: 0.36093274, b: 0.8018868, a: 1}
 --- !u!1 &1090928782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,6 +2971,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1088339312}
         m_TargetAssemblyTypeName: UnityEngine.UI.ScrollRect, UnityEngine.UI
         m_MethodName: set_verticalNormalizedPosition
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1088339315}
+        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
+        m_MethodName: SetPosition
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
