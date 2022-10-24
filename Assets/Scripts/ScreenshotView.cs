@@ -1,10 +1,10 @@
 using Assets.Scripts.Extensions;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System;
+using System.Collections.Generic;
+using System.Collections;
 
 public class ScreenshotView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -33,8 +33,6 @@ public class ScreenshotView : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.parent = _previousParent;
-
         var container = EventSystem.current.GetFirstComponentUnderPointer<DropContainer>(eventData);
         if (container != null)
         {

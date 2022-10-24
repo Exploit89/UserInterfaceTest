@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using System;
 
 namespace Assets.Scripts.Extensions
 {
