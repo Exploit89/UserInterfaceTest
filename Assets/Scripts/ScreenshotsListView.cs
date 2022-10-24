@@ -8,6 +8,7 @@ public class ScreenshotsListView : MonoBehaviour
     [SerializeField] private Transform _container;
 
     [SerializeField] private Sprite _defaultSprite;
+    [SerializeField] private Transform _dragingParent;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class ScreenshotsListView : MonoBehaviour
         foreach (var screenshot in screenshots)
         {
             var view = Instantiate(_template, _container);
+            view.Init(_dragingParent);
             view.Render(screenshot);
         }
     }
