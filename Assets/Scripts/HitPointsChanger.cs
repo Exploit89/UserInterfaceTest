@@ -1,38 +1,54 @@
 using UnityEngine;
-using DG.Tweening;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class HitPointsChanger : MonoBehaviour
 {
-    [SerializeField] private Slider _playerHitPointsBar;
     [SerializeField] private Text _currentHitPoints;
-    private float _currentHitPointsNumber;
+
     private float _minHitPoints = 0f;
     private float _maxHitPoints = 100f;
 
+
+    public bool IsHealing { get; private set; }
+    public bool IsHitting { get; private set; }
+    public float CurrentHitPointsNumber { get; private set; }
+    public float HitPointsHealStep { get; private set; }
+    public float HitPointsHitStep { get; private set; }
+
+
+    public UnityEvent HealingActivated = new UnityEvent();
+    public UnityEvent HittingActivated = new UnityEvent();
+
     void Start()
     {
-        _currentHitPoints.DOText("100", 0);
-        _currentHitPointsNumber = 100f;
+        CurrentHitPointsNumber = _maxHitPoints;
+        _currentHitPoints.text = $"{_maxHitPoints}";
     }
 
-    public void Heal()
+    public void Heal(float healValue)
     {
-        if (_currentHitPointsNumber < _maxHitPoints) 
+        if (CurrentHitPointsNumber < _maxHitPoints)
         {
-            _currentHitPointsNumber += 10f;
-            _playerHitPointsBar.DOValue(_currentHitPointsNumber, 1);
-            _currentHitPoints.DOText(_currentHitPointsNumber.ToString(), 0);
+            IsHealing= true;
+            HealingActivated?.Invoke();
+            CurrentHitPointsNumber += healValue;
+            _currentHitPoints.text = $"{CurrentHitPointsNumber}";
         }
+
+        //IsHealing = false;
     }
 
-    public void Hit()
+    public void Hit(float hitValue)
     {
-        if (_currentHitPointsNumber > _minHitPoints)
+        if (CurrentHitPointsNumber > _minHitPoints)
         {
-            _currentHitPointsNumber -= 10f;
-            _playerHitPointsBar.DOValue(_currentHitPointsNumber, 1);
-            _currentHitPoints.DOText(_currentHitPointsNumber.ToString(), 0);
+            IsHitting = true;
+            HittingActivated?.Invoke();
+            CurrentHitPointsNumber -= hitValue;
+            _currentHitPoints.text = $"{CurrentHitPointsNumber}";
         }
+
+        //IsHitting = false;
     }
 }

@@ -713,19 +713,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 772765640}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1822828990}
-        m_TargetAssemblyTypeName: HitPointsChanger, Assembly-CSharp
-        m_MethodName: Hit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &772765640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,7 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42270e240fe18547b6a81604712cad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitPointsChanger: {fileID: 1822828990}
+  _hitPointsChanger: {fileID: 1582408872}
 --- !u!1 &859843694
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +835,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 
 --- !u!222 &859843697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -939,19 +927,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1168412223}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1822828990}
-        m_TargetAssemblyTypeName: HitPointsChanger, Assembly-CSharp
-        m_MethodName: Heal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1168412223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f922130d26a18e43bf63749479dd2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitPointsChanger: {fileID: 1822828990}
+  _hitPointsChanger: {fileID: 1582408872}
 --- !u!1 &1407901012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1224,7 @@ GameObject:
   - component: {fileID: 1582408870}
   - component: {fileID: 1582408869}
   - component: {fileID: 1582408868}
+  - component: {fileID: 1582408872}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1338,6 +1315,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1582408872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582408867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941a14b79e8f40848bc62b11b21f9307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHitPoints: {fileID: 859843696}
+  HealingActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  HittingActivated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1822828987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,11 +1436,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1822828987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941a14b79e8f40848bc62b11b21f9307, type: 3}
+  m_Script: {fileID: 11500000, guid: 071e2cd25b9754742ab30f99f620707b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHitPointsBar: {fileID: 1822828989}
-  _currentHitPoints: {fileID: 859843696}
+  _hitPointsBar: {fileID: 1822828989}
+  _hitPointsChanger: {fileID: 1582408872}
+  _maxDelta: 1
 --- !u!1 &2084843137
 GameObject:
   m_ObjectHideFlags: 0
