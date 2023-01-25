@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 [RequireComponent(typeof(Slider))]
+[RequireComponent(typeof(HitPointsChanger))]
 
 public class HitPointsBarChanger : MonoBehaviour
 {
@@ -11,11 +12,10 @@ public class HitPointsBarChanger : MonoBehaviour
     [SerializeField] private float _maxDelta;
 
     private Coroutine _currentCoroutine;
-    private float _currentHitPonitBarValue;
 
     private void Start()
     {
-        _currentHitPonitBarValue = _hitPointsChanger.CurrentHitPointsNumber;
+        _hitPointsBar.value = _hitPointsChanger.CurrentHitPointsNumber;
         _hitPointsChanger.HittingActivated.AddListener(ValueChange);
         _hitPointsChanger.HealingActivated.AddListener(ValueChange);
     }
@@ -31,12 +31,13 @@ public class HitPointsBarChanger : MonoBehaviour
 
     private IEnumerator ChangeHitPointsValue(float value)
     {
-        var _waitingTime = new WaitForSeconds(0.5f);
+        var _waitingTime = new WaitForSeconds(0.1f);
 
         while (_hitPointsBar.value != value)
         {
-            _hitPointsBar.value = Mathf.MoveTowards(_currentHitPonitBarValue, _hitPointsChanger.CurrentHitPointsNumber, _maxDelta);
+            _hitPointsBar.value = Mathf.MoveTowards(_hitPointsBar.value, _hitPointsChanger.CurrentHitPointsNumber, _maxDelta);
             yield return _waitingTime;
+            Debug.Log(Time.deltaTime);
         }
     }
 }

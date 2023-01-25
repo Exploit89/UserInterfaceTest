@@ -9,6 +9,5 @@ public class HitButton : MonoBehaviour
     public void OnClick()
     {
         _hitPointsChanger.Hit(_hitPointChangeStep);
-        Debug.Log("-10");
     }
 }
