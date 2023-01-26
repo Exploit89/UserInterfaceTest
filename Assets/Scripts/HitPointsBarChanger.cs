@@ -7,17 +7,17 @@ using System.Collections;
 
 public class HitPointsBarChanger : MonoBehaviour
 {
-    [SerializeField] private Slider _hitPointsBar;
-    [SerializeField] private HitPointsChanger _hitPointsChanger;
+    [SerializeField] private Slider _hitPointBar;
+    [SerializeField] private HitPointsChanger _hitPoint;
     [SerializeField] private float _maxDelta;
 
     private Coroutine _currentCoroutine;
 
     private void Start()
     {
-        _hitPointsBar.value = _hitPointsChanger.CurrentHitPointsNumber;
-        _hitPointsChanger.HittingActivated.AddListener(ValueChange);
-        _hitPointsChanger.HealingActivated.AddListener(ValueChange);
+        _hitPointBar.value = _hitPoint.CurrentHitPointsNumber;
+        _hitPoint.HittingActivated += ValueChange;
+        _hitPoint.HealingActivated += ValueChange;
     }
 
     public void ValueChange()
@@ -25,19 +25,23 @@ public class HitPointsBarChanger : MonoBehaviour
         if (_currentCoroutine != null)
             StopCoroutine(_currentCoroutine);
 
-        if (_hitPointsChanger.IsHealing || _hitPointsChanger.IsHitting)
-            _currentCoroutine = StartCoroutine(ChangeHitPointsValue(_hitPointsChanger.CurrentHitPointsNumber));
+        _currentCoroutine = StartCoroutine(ChangeHitPointsValue(_hitPoint.CurrentHitPointsNumber));
+
+        if (_hitPoint.CurrentHitPointsNumber <= 0)
+        {
+            _hitPoint.HittingActivated -= ValueChange;
+            _hitPoint.HealingActivated -= ValueChange;
+        }
     }
 
     private IEnumerator ChangeHitPointsValue(float value)
     {
         var _waitingTime = new WaitForSeconds(0.1f);
 
-        while (_hitPointsBar.value != value)
+        while (_hitPointBar.value != value)
         {
-            _hitPointsBar.value = Mathf.MoveTowards(_hitPointsBar.value, _hitPointsChanger.CurrentHitPointsNumber, _maxDelta);
+            _hitPointBar.value = Mathf.MoveTowards(_hitPointBar.value, _hitPoint.CurrentHitPointsNumber, _maxDelta);
             yield return _waitingTime;
-            Debug.Log(Time.deltaTime);
         }
     }
 }

@@ -643,7 +643,6 @@ GameObject:
   - component: {fileID: 772765640}
   - component: {fileID: 772765639}
   - component: {fileID: 772765642}
-  - component: {fileID: 772765643}
   m_Layer: 5
   m_Name: HitButton
   m_TagString: Untagged
@@ -777,20 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42270e240fe18547b6a81604712cad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitPointsChanger: {fileID: 1582408872}
---- !u!114 &772765643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772765637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcc9c523e7beb4245837705a6150a981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  _hitPoint: {fileID: 1582408872}
 --- !u!1 &859843694
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +869,6 @@ GameObject:
   - component: {fileID: 1168412223}
   - component: {fileID: 1168412222}
   - component: {fileID: 1168412225}
-  - component: {fileID: 1168412226}
   m_Layer: 5
   m_Name: HealButton
   m_TagString: Untagged
@@ -1017,20 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f922130d26a18e43bf63749479dd2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitPointsChanger: {fileID: 1582408872}
---- !u!114 &1168412226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168412220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcc9c523e7beb4245837705a6150a981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  _hitPoint: {fileID: 1582408872}
 --- !u!1 &1407901012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,12 +1352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHitPoints: {fileID: 859843696}
-  HealingActivated:
-    m_PersistentCalls:
-      m_Calls: []
-  HittingActivated:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1822828987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,8 +1458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071e2cd25b9754742ab30f99f620707b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitPointsBar: {fileID: 1822828989}
-  _hitPointsChanger: {fileID: 1582408872}
+  _hitPointBar: {fileID: 1822828989}
+  _hitPoint: {fileID: 1582408872}
   _maxDelta: 1
 --- !u!114 &1822828991
 MonoBehaviour:
@@ -1507,13 +1473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941a14b79e8f40848bc62b11b21f9307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHitPoints: {fileID: 0}
-  HealingActivated:
-    m_PersistentCalls:
-      m_Calls: []
-  HittingActivated:
-    m_PersistentCalls:
-      m_Calls: []
+  _currentHitPoints: {fileID: 859843696}
 --- !u!1 &2084843137
 GameObject:
   m_ObjectHideFlags: 0
