@@ -1348,10 +1348,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1582408867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941a14b79e8f40848bc62b11b21f9307, type: 3}
+  m_Script: {fileID: 11500000, guid: 1808303b3d04765489e2a3f7ed2f0f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHitPoints: {fileID: 859843696}
 --- !u!1 &1822828987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1460,7 @@ MonoBehaviour:
   _hitPointBar: {fileID: 1822828989}
   _hitPoint: {fileID: 1582408872}
   _maxDelta: 1
+  _currentHitPoints: {fileID: 859843696}
 --- !u!114 &1822828991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,10 +1470,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1822828987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941a14b79e8f40848bc62b11b21f9307, type: 3}
+  m_Script: {fileID: 11500000, guid: 1808303b3d04765489e2a3f7ed2f0f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHitPoints: {fileID: 859843696}
 --- !u!1 &2084843137
 GameObject:
   m_ObjectHideFlags: 0

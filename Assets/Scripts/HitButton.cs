@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HitButton : MonoBehaviour
 {
-    [SerializeField] private HitPointsChanger _hitPoint;
+    [SerializeField] private Health _hitPoint;
 
     private float _hitPointChangeStep = 10f;
 

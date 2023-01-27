@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealButton : MonoBehaviour
 {
-    [SerializeField] private HitPointsChanger _hitPoint;
+    [SerializeField] private Health _hitPoint;
 
     private float _healPointChangeStep = 10f;
 

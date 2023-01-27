@@ -1,11 +1,8 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class HitPointsChanger : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    [SerializeField] private Text _currentHitPoints;
-
     private float _minHitPoints = 0f;
     private float _maxHitPoints = 100f;
 
@@ -23,7 +20,6 @@ public class HitPointsChanger : MonoBehaviour
     {
         CurrentHitPointsNumber += healValue;
         CurrentHitPointsNumber = Mathf.Clamp(CurrentHitPointsNumber, _minHitPoints, _maxHitPoints);
-        _currentHitPoints.text = $"{CurrentHitPointsNumber}";
         HealingActivated?.Invoke();
     }
 
@@ -31,7 +27,6 @@ public class HitPointsChanger : MonoBehaviour
     {
         CurrentHitPointsNumber -= hitValue;
         CurrentHitPointsNumber = Mathf.Clamp(CurrentHitPointsNumber, _minHitPoints, _maxHitPoints);
-        _currentHitPoints.text = $"{CurrentHitPointsNumber}";
         HittingActivated?.Invoke();
     }
 }
